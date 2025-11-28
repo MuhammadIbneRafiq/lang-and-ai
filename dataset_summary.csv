@@ -1,0 +1,9 @@
+Dataset,Total Samples,Unique Labels,Avg Words,Median Words
+gender,"44,636",2,1471,1500
+birth_year,"41,874",58,1471,1500
+political_leaning,"57,232",3,1480,1500
+nationality,"82,617",51,1486,1500
+extrovert_introvert,"40,453",2,1474,1500
+feeling_thinking,"39,601",2,1472,1500
+judging_perceiving,"41,366",2,1476,1500
+sensing_intuitive,"41,840",2,1476,1500
