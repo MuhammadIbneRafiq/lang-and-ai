@@ -1,0 +1,4 @@
+dataset,total,unique_authors,train,dev,test,leak_before,leak_after
+gender,10000,10000,7000,1500,1500,63.4%,0.8%
+birth_year,12198,12198,8538,1830,1830,50.9%,0.5%
+political_leaning,9999,9999,6999,1500,1500,29.1%,0.1%

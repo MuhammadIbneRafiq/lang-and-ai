@@ -1,0 +1,102 @@
+[
+  {
+    "dataset": "gender",
+    "total_samples": 39886,
+    "train_samples": 27920,
+    "dev_samples": 5983,
+    "test_samples": 5983,
+    "audit_before": {
+      "dataset": "gender_polluted",
+      "total_checked": 5000,
+      "samples_with_leakage": 2440,
+      "leakage_rate_percent": 48.8,
+      "pattern_counts": {
+        "age_years_old": 801,
+        "age_gender_compact": 1710,
+        "bracket_age_gender": 799,
+        "i_am_age": 461,
+        "as_a_gender": 326,
+        "age_year_old_gender": 78,
+        "i_am_gender": 121,
+        "i_am_gender_direct": 8,
+        "born_in": 18
+      }
+    },
+    "audit_after": {
+      "dataset": "gender_cleaned",
+      "total_checked": 5000,
+      "samples_with_leakage": 6,
+      "leakage_rate_percent": 0.12,
+      "pattern_counts": {
+        "i_am_gender": 6
+      }
+    }
+  },
+  {
+    "dataset": "birth_year",
+    "total_samples": 14088,
+    "train_samples": 9861,
+    "dev_samples": 2113,
+    "test_samples": 2114,
+    "audit_before": {
+      "dataset": "birth_year_polluted",
+      "total_checked": 5000,
+      "samples_with_leakage": 2330,
+      "leakage_rate_percent": 46.6,
+      "pattern_counts": {
+        "age_gender_compact": 1383,
+        "age_years_old": 971,
+        "bracket_age_gender": 454,
+        "as_a_gender": 277,
+        "i_am_gender": 129,
+        "i_am_age": 484,
+        "age_year_old_gender": 93,
+        "i_am_gender_direct": 16,
+        "born_in": 29
+      }
+    },
+    "audit_after": {
+      "dataset": "birth_year_cleaned",
+      "total_checked": 5000,
+      "samples_with_leakage": 13,
+      "leakage_rate_percent": 0.26,
+      "pattern_counts": {
+        "i_am_gender": 12,
+        "age_gender_compact": 1
+      }
+    }
+  },
+  {
+    "dataset": "political_leaning",
+    "total_samples": 24000,
+    "train_samples": 16800,
+    "dev_samples": 3600,
+    "test_samples": 3600,
+    "audit_before": {
+      "dataset": "political_leaning_polluted",
+      "total_checked": 5000,
+      "samples_with_leakage": 1388,
+      "leakage_rate_percent": 27.76,
+      "pattern_counts": {
+        "age_years_old": 562,
+        "as_a_gender": 111,
+        "age_year_old_gender": 23,
+        "age_gender_compact": 750,
+        "i_am_age": 143,
+        "born_in": 13,
+        "i_am_gender": 59,
+        "bracket_age_gender": 19,
+        "i_am_gender_direct": 1
+      }
+    },
+    "audit_after": {
+      "dataset": "political_leaning_cleaned",
+      "total_checked": 5000,
+      "samples_with_leakage": 1,
+      "leakage_rate_percent": 0.02,
+      "pattern_counts": {
+        "i_am_gender": 1
+      }
+    }
+  }
+]

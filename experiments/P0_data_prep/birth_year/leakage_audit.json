@@ -1,0 +1,9 @@
+{
+  "leak_rate_before": 50.949999999999996,
+  "leak_rate_after": 0.5499999999999999,
+  "total_samples": 12198,
+  "unique_authors": 12198,
+  "train_authors": 8538,
+  "dev_authors": 1830,
+  "test_authors": 1830
+}
