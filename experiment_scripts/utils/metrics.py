@@ -16,6 +16,38 @@ from pathlib import Path
 from datetime import datetime
 
 
+def _make_jsonable(obj):
+    if isinstance(obj, dict):
+        new_dict = {}
+        for k, v in obj.items():
+            if isinstance(k, (np.integer,)):
+                new_k = int(k)
+            elif isinstance(k, (np.floating,)):
+                new_k = float(k)
+            elif isinstance(k, (np.bool_,)):
+                new_k = bool(k)
+            else:
+                new_k = k
+            if not isinstance(new_k, (str, int, float, bool)) and new_k is not None:
+                new_k = str(new_k)
+            new_dict[new_k] = _make_jsonable(v)
+        return new_dict
+
+    if isinstance(obj, (list, tuple)):
+        return [_make_jsonable(x) for x in obj]
+
+    if isinstance(obj, (np.integer,)):
+        return int(obj)
+    if isinstance(obj, (np.floating,)):
+        return float(obj)
+    if isinstance(obj, (np.bool_,)):
+        return bool(obj)
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+
+    return obj
+
+
 def compute_metrics(y_true, y_pred, label_names=None):
     """
     Compute comprehensive classification metrics.
@@ -83,7 +115,7 @@ def save_results(results: dict, output_path: Path, experiment_name: str):
     
     file_path = output_path / f'{experiment_name}_results.json'
     with open(file_path, 'w') as f:
-        json.dump(results, f, indent=2, default=str)
+        json.dump(_make_jsonable(results), f, indent=2, default=str)
     
     print(f"Results saved to: {file_path}")
     return file_path
