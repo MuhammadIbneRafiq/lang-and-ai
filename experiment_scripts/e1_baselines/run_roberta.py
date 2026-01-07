@@ -17,7 +17,6 @@ from torch.utils.data import DataLoader
 from transformers import (
     RobertaTokenizer, 
     RobertaForSequenceClassification,
-    AdamW,
     get_linear_schedule_with_warmup
 )
 from tqdm import tqdm
@@ -148,7 +147,8 @@ def train_roberta(
     dev_loader = DataLoader(dev_dataset, batch_size=batch_size)
     
     # Optimizer and scheduler
-    optimizer = AdamW(
+    # Use torch.optim.AdamW (AdamW no longer exported from transformers in 4.57+)
+    optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=learning_rate,
         weight_decay=weight_decay
