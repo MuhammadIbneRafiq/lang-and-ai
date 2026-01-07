@@ -10,12 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial framework for experimental analysis.
 - Data preprocessing pipeline for gender and political leaning datasets.
+- Updated documentation on preprocessing steps ([guide](https://example.com/preprocessing-guide)).
 
 ## [1.2.0] - 2026-01-08
 
 ### Added
 - Cross-condition evaluation for RoBERTa models.
 - Final evaluation phase (E4) for comprehensive model comparison.
+- Release notes published on internal wiki ([v1.2.0 notes](https://example.com/wiki/v1.2.0)).
 
 ### Changed
 - Updated SVM baseline to include performance drop analysis.
@@ -31,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - RoBERTa baseline implementation for gender classification.
 - Stylistic SVM baseline with character n-grams.
 - Keyword heuristic baseline for initial assessment.
+- Architecture overview diagram ([figma](https://example.com/figma-overview)).
 
 ### Fixed
 - Addressed TensorFlow warnings and CUDA initialization errors.

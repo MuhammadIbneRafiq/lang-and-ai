@@ -1543,6 +1543,20 @@
     margin: 0.5rem 0;
 }
 
+.changelog-popup #changelog-content a {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.changelog-popup #changelog-content a:visited {
+    color: #b0c8ff; /* keep contrast; avoid “muddy” visited purple */
+}
+
+.changelog-popup #changelog-content a:hover {
+    color: #bfdbfe;
+    text-decoration: underline;
+}
+
 .changelog-popup #changelog-content::-webkit-scrollbar {
     width: 6px;
 }
@@ -2029,7 +2043,7 @@ initializeChangelogToggle() {
                 if (this.loginDisabled) {
                     // Return lightweight dummy responses for local testing
                     if (url.includes('get_changelog')) {
-                        const dummy = `# Local Changelog\n\n## [1.2.0] - 2026-01-08\n- Added local preview.\n- Improved popup overlay.\n`;
+                        const dummy = `# Local Changelog\n\n## [1.2.0] - 2026-01-08\n- Added local preview.\n- Improved popup overlay.\n- Docs updated ([preview link](https://example.com/local-docs)).\n\n## [1.1.0] - 2026-01-07\n- Added sample cards.\n- Internal notes ([team page](https://example.com/team-notes)).\n`;
                         return {
                             ok: true,
                             text: async () => dummy,
